@@ -1,0 +1,30 @@
+Filename: PhotoLab.txt
+	Assignment 4
+Name: Stefan Cao
+ID#: 79267250
+Course: EECS22
+
+This assignment dealt with Digital Image Processing, but with pointers. The importance with this assignment was to change the old DIPs so that it would use pointers because it is more powerful. Implementing it the old way was very limited since one cannot for example change the size of the image because it was already determined during runtime. Nevertheless, implementing it this way allowed us to be more flexible.
+
+For the old DIPs:
+	For the old DIPs operations, the significance was just to change the structures so that it would work with pointers.
+
+For Image.c:
+	This function was supposed to be called whenever needed to get a pixel (in the old case of using tmp = R[x][y] for example). It was also suppoed to set a pixel (in the old case R[x][y] = tmp , for example). This function was also supposed to create/ allocated memory for the structure and the RGB pixel values. There was also another function in this C-file that was supposed to Deallocate the memory back.
+
+Resize:
+	For this function, I had to first determine whether to shrink or enlarge the picture since there would be two different function/operation for them. For shrinking, I would take the average of the pixels around it and then store it back to the pixel. For enlarging, I would take a pixel and duplicate it number of times.
+
+Rotate:
+	For this function, I had to go through the pixels of the orginal image, but at the same time update the values to the new rotated image. Therefore, as I incremented the x for the original and had to increment the y for the rotated image, as I incremented the y for the orininal image, I had to decrement the x value for the rotated image.
+
+Mandelbrot:
+	For this function, I did try to implement it and followed the algorithm, but the result in the end ended up with a one colored picture. I try to see what the problem could be and as I printed out some values, I noticed that the scaling down the values did not change very much. For example, it would change from 2.51 to 2.49 to 2.47 etc (very minimal changes) hence, I got the same iteration number everytime resulting a one colored picture.
+
+BONUS: Add border outside the image
+	For this function, I first created a new image, and then I ploted the RGB values for the border. After that I put the pixels from the orignial image to the image resulting a new image with border outside, but keeping the same orignal image size.
+
+NOTE: When running my program individually, I did not have any errors or
+memory leak using valgrind, but when running AutoTest I would get some memory
+leaks and errors.
+
